@@ -2,8 +2,8 @@
 	<div>
 		{{msg}}
 		<br />
-		<p>{{$route.new_file.name}}</p>
-		{{ $route.new_file.psd}}
+		<p>{{$route.params.name}}</p>
+		{{ $route.params.psd}}
 	</div>
 </template>
 
@@ -16,7 +16,18 @@ export default {
     }
   },
   mounted(){
-  	console.log()
+  	console.log("456")
+  },
+  beforeRouteEnter:(to,from,next)=>{
+  	console.log(to);
+  	console.log(from);
+  	console.log(next);
+  	next();
+  },
+  beforeRouteLeave:(to,from,next)=>{
+  	console.log(to);
+  	console.log(from);
+  	next();
   }
 }
 </script>
