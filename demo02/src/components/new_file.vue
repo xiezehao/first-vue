@@ -4,6 +4,8 @@
 		<br />
 		<p>{{$route.params.name}}</p>
 		{{ $route.params.psd}}
+		<br />
+		<button @click="goHome()">首页</button>
 	</div>
 </template>
 
@@ -14,6 +16,11 @@ export default {
     return {
       msg: 'new_file page'
     }
+  },
+  methods:{
+  	goHome(){
+  		this.$router.push("/")
+  	}
   },
   mounted(){
   	console.log("456")
